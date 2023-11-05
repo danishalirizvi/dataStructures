@@ -25,6 +25,7 @@ class LinkedList {
 
   insertEnd(data) {
     const newNode = new Node(data);
+
     if (!this.head) {
       this.head = newNode;
     } else {
@@ -71,6 +72,8 @@ class LinkedList {
   deleteEnd() {
     if (!this.head) {
       console.log("List is Empty.")
+    } else if(this.size === 1){
+      this.head = null
     } else {
       let current = this.head
       let previous
@@ -84,7 +87,9 @@ class LinkedList {
   }
 
   deleteAt(index) {
-    if (index < 0 || index > this.size) {
+    if(!this.head){
+      console.log("List is Empty.")
+    } else if (index < 0 || index >= this.size) {
       console.log("Index not valid.")
     } else if (index === 0) {
       this.deleteStart()
@@ -113,17 +118,23 @@ class LinkedList {
 }
 
 const linkedList = new LinkedList();
-linkedList.insertStart("XYZ")
+// linkedList.insertStart("ABC")
+// linkedList.insertStart("DEF")
+// linkedList.insertStart("GHI")
 linkedList.insertEnd("A");
 linkedList.insertEnd("B");
 linkedList.insertEnd("C");
-linkedList.insertAt("PRQ", 4)
+linkedList.insertEnd("D");
+// linkedList.insertAt("PP", 0)
+// linkedList.insertAt("QQ", 1)
+// linkedList.insertAt("RR", 2)
+// linkedList.insertAt("SS", 0)
 
-linkedList.display()
+// linkedList.display()
 
-linkedList.deleteStart()
-linkedList.deleteEnd()
-linkedList.deleteAt(1)
+// linkedList.deleteStart()
+// linkedList.deleteEnd()
+linkedList.deleteAt(5)
 
 
 linkedList.display()

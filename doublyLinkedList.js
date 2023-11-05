@@ -9,6 +9,7 @@ class Node {
 class DoublyLinkedList {
   constructor() {
     this.head = null
+    this.tail = null
     this.size = 0
   }
 
@@ -17,6 +18,7 @@ class DoublyLinkedList {
 
     if (this.head === null) {
       this.head = node
+      this.tail = node
     } else {
       node.next = this.head;
       this.head.prev = node
@@ -30,13 +32,18 @@ class DoublyLinkedList {
 
     if (!this.head) {
       this.head = node
+      this.tail = node
     } else {
-      let current = this.head
-      while (current.next) {
-        current = current.next
-      }
-      current.next = node
-      node.prev = current
+      // let current = this.head
+      // while (current.next) {
+      //   current = current.next
+      // }
+      // current.next = node
+      // node.prev = current
+
+      this.tail.next = node
+      node.prev = this.tail
+      this.tail = node
       this.size++
     }
   }
@@ -44,7 +51,7 @@ class DoublyLinkedList {
   insertAt(data, index) {
     const node = new Node(data)
 
-    if (index < 0 || index > this.size) {
+    if (index < 0 || index >= this.size) {
       console.log("Index not valid.")
     } else if (index === 0) {
       this.insertStart(data)
@@ -57,8 +64,6 @@ class DoublyLinkedList {
         current = current.next
         count++
       }
-      // console.log("=====>" + current.prev.data)
-      // console.log(current.data)
       node.next = current
       node.prev = current.prev
       current.prev.next = node
@@ -85,10 +90,25 @@ class DoublyLinkedList {
         current = current.next
       }
       current.prev.next = null
-      current.prev
+      this.size--
     }
   }
 
+  deleteAt(index) {
+    if (index = 0 || index > this.size) {
+      console.log(`Index not Valid.`);
+    } else {
+      let current = this.head
+      let count = 0
+      while (current && count < index) {
+        current = current.next
+        count++
+      }
+      current.prev.next = current.next
+
+    }
+
+  }
   display() {
     let current = this.head;
     while (current) {
@@ -99,25 +119,32 @@ class DoublyLinkedList {
 
   displayTest() {
     let current = this.head;
+    let strRep = ""
     while (current) {
+      strRep += current.data ? "  " + current.data : "  null";
       console.log(`----------`)
       console.log(current.prev ? current.prev.data : "null")
       console.log(current.data ? current.data : "null")
       console.log(current.next ? current.next.data : "null")
       current = current.next
     }
+    console.log(`----------`)
+    console.log(strRep)
   }
 }
 
 const linkedList = new DoublyLinkedList();
-linkedList.deleteStart()
+// linkedList.deleteStart()
+linkedList.insertStart("AA")
+linkedList.insertStart("BB")
 linkedList.insertEnd("A");
 linkedList.insertEnd("B");
-linkedList.insertStart("XYZ")
-linkedList.deleteStart()
-linkedList.insertEnd("C");
-linkedList.insertAt("PRQ", 0)
-linkedList.deleteStart()
+// linkedList.insertStart("XYZ")
+// linkedList.deleteStart()
+// linkedList.insertEnd("C");
+linkedList.insertAt("PRQ", 3)
+// linkedList.deleteStart()
+// linkedList.deleteEnd()
 // linkedList.display()
 
 // linkedList.deleteStart()
@@ -125,5 +152,5 @@ linkedList.deleteStart()
 // linkedList.deleteAt(1)
 
 
-linkedList.display()
-// linkedList.displayTest()
+// linkedList.display()
+linkedList.displayTest()
