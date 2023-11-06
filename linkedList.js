@@ -126,7 +126,7 @@ linkedList.insertEnd("A");
 linkedList.insertEnd("B");
 linkedList.insertEnd("C");
 linkedList.insertEnd("D");
-linkedList.insertAt("PP", 0)
+linkedList.insertAt("PP", 3)
 // linkedList.insertAt("QQ", 1)
 // linkedList.insertAt("RR", 2)
 // linkedList.insertAt("SS", 0)
@@ -136,6 +136,7 @@ linkedList.insertAt("PP", 0)
 // linkedList.deleteStart()
 // linkedList.deleteEnd()
 linkedList.deleteAt(5)
+// 
 
 
 linkedList.display()
