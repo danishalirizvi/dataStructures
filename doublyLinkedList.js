@@ -34,13 +34,6 @@ class DoublyLinkedList {
       this.head = node
       this.tail = node
     } else {
-      // let current = this.head
-      // while (current.next) {
-      //   current = current.next
-      // }
-      // current.next = node
-      // node.prev = current
-
       this.tail.next = node
       node.prev = this.tail
       this.tail = node
@@ -109,6 +102,7 @@ class DoublyLinkedList {
     }
 
   }
+  
   display() {
     let current = this.head;
     while (current) {
@@ -135,14 +129,14 @@ class DoublyLinkedList {
 
 const linkedList = new DoublyLinkedList();
 // linkedList.deleteStart()
-linkedList.insertStart("AA")
-linkedList.insertStart("BB")
-linkedList.insertEnd("A");
-linkedList.insertEnd("B");
+// linkedList.insertStart("AA")
+// linkedList.insertStart("BB")
+// linkedList.insertEnd("A");
+// linkedList.insertEnd("B");
 // linkedList.insertStart("XYZ")
 // linkedList.deleteStart()
 // linkedList.insertEnd("C");
-linkedList.insertAt("PRQ", 3)
+linkedList.insertAt("PP", 3)
 // linkedList.deleteStart()
 // linkedList.deleteEnd()
 // linkedList.display()
@@ -152,5 +146,5 @@ linkedList.insertAt("PRQ", 3)
 // linkedList.deleteAt(1)
 
 
-// linkedList.display()
-linkedList.displayTest()
+linkedList.display()
+// linkedList.displayTest()
