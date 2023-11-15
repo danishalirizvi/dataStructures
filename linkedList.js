@@ -34,15 +34,15 @@ class LinkedList {
         current = current.next;
       }
       current.next = node;
-      this.size++
     }
+    this.size++
   }
 
   insertAt(data, index) {
     const node = new Node(data)
 
-    if (index < 0 || index > this.size) {
-      console.log("Index not valid.")
+    if (index < 0 || index >= this.size) {
+      console.log("Index not valid....")
     } else if (index === 0) {
       node.next = this.head;
       this.head = node;
@@ -126,7 +126,8 @@ linkedList.insertEnd("A");
 linkedList.insertEnd("B");
 linkedList.insertEnd("C");
 linkedList.insertEnd("D");
-linkedList.insertAt("PP", 3)
+console.log(linkedList.size)
+linkedList.insertAt("PP", 4)
 // linkedList.insertAt("QQ", 1)
 // linkedList.insertAt("RR", 2)
 // linkedList.insertAt("SS", 0)
@@ -135,7 +136,7 @@ linkedList.insertAt("PP", 3)
 
 // linkedList.deleteStart()
 // linkedList.deleteEnd()
-linkedList.deleteAt(5)
+// linkedList.deleteAt(5)
 // 
 
 

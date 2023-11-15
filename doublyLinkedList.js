@@ -142,47 +142,15 @@ class DoublyLinkedList {
     this.size = 0;
   }
 }
-
-// const testLinkedList = () => {
-//   const linkedList = new DoublyLinkedList();
-
-//   // Test case 1: Inserting at the start of an empty list
-//   linkedList.insertStart("A");
-//   linkedList.display();
-//   linkedList.reset();
-
-//   // Test case 2: Inserting at the start of a list with one element
-//   linkedList.insertStart("B");
-//   linkedList.display();
-//   linkedList.reset();
-
-//   // Test case 3: Inserting at the end of the list
-//   linkedList.insertEnd("C");
-//   linkedList.display();
-//   linkedList.reset();
-
-//   // Test case 4: Deleting from the start of the list
-//   linkedList.insertEnd("A");
-//   linkedList.insertEnd("B");
-//   linkedList.deleteStart();
-//   linkedList.display();
-//   linkedList.reset();
-
-//   // Test case 5: Deleting from the end of the list
-//   linkedList.insertEnd("C");
-//   linkedList.insertEnd("D");
-//   linkedList.deleteEnd();
-//   linkedList.display();
-//   linkedList.reset();
-
-//   // Test case 6: Deleting at a specific index
-//   linkedList.insertEnd("A");
-//   linkedList.insertEnd("B");
-//   linkedList.insertEnd("C");
-//   linkedList.deleteAt(1);
-//   linkedList.display();
-//   linkedList.reset();
-// };
-
-// testLinkedList();
 module.exports = DoublyLinkedList;
+
+const list = new DoublyLinkedList()
+
+list.insertEnd(1)
+list.insertEnd(2)
+list.insertEnd(3)
+list.insertEnd(4)
+
+list.deleteAt(2)
+
+list.display()
