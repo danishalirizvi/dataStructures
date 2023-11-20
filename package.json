@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "start": "node Queue/queue.js"
+    "start": "node Matrix/matrix.js"
   },
   "keywords": [],
   "author": "",

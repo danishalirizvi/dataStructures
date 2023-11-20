@@ -43,17 +43,40 @@ class QueueArray{
   }
 }
 
-let queue = new QueueArray()
+// let queue = new QueueArray()
 
-queue.enqueue(2)
-queue.enqueue(4)
-queue.enqueue(5)
-queue.enqueue(21)
+// queue.enqueue(2)
+// queue.enqueue(4)
+// queue.enqueue(5)
+// queue.enqueue(21)
 
-queue.display()
+// queue.display()
 
-queue.dequeue()
-queue.dequeue()
-queue.dequeue()
+// queue.dequeue()
+// queue.dequeue()
+// queue.dequeue()
 
-queue.display()
+// queue.display()
+
+class Node{
+  constructor(data){
+    this.data = data
+    this.next = null
+  }
+}
+
+class QueueLinkedList{
+  constructor(){
+    this.head = null
+    this.tail = null
+    this.size = 0
+  }
+
+  isEmpty(){
+    return this.size === 0
+  }
+}
+
+let queue = new QueueLinkedList()
+
+console.log(queue.isEmpty())
