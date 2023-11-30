@@ -1,3 +1,12 @@
 {
-  "files": {}
+  "files": {
+    "Queue/priorityQueue.js": [
+      {
+        "id": "0a24daa5-aea2-42f3-868a-1c978ba01dac",
+        "line": 87,
+        "version": 4714,
+        "index": 1429
+      }
+    ]
+  }
 }

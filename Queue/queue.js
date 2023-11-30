@@ -3,10 +3,6 @@ class QueueArray {
     this.items = []
   }
 
-  isEmpty() {
-    return this.items.length === 0
-  }
-
   enqueue(data) {
     this.items.push(data)
   }
@@ -21,12 +17,12 @@ class QueueArray {
     }
   }
 
-  front() {
+  peek() {
     return this.isEmpty() ? null : this.items[0]
   }
 
-  size() {
-    return this.items.length
+  isEmpty() {
+    return this.items.length === 0
   }
 
   display() {
@@ -88,6 +84,7 @@ class QueueLinkedList {
   dequeue() {
     if (this.isEmpty()) {
       console.log(`Queue is Empty.`)
+      return null
     }
     else {
       let temp = this.front
@@ -104,11 +101,21 @@ class QueueLinkedList {
     return this.size === 0
   }
 
+  peek() {
+    if (this.isEmpty()) {
+      console.log(`Queue is Empty.`)
+      return null
+    }
+    else {
+      return this.front.data
+    }
+  }
+
   display() {
     let current = this.front
 
     console.log(`-----------------`)
-    while (current != null) {
+    while (current) {
       console.log(`${current.data}`)
       current = current.next
     }
@@ -130,5 +137,6 @@ queue.enqueue(1)
 queue.enqueue(2)
 queue.enqueue(3)
 queue.display()
+console.log(queue.peek())
 
-console.log(queue.isEmpty())
+// console.log(queue.isEmpty())
