@@ -81,6 +81,10 @@ class PriorityQueueLinkedList {
     this.size = 0
   }
 
+  peek() {
+    return this.head
+  }
+
   enqueue(value, priority) {
     const node = new Node(value, priority)
 
@@ -94,10 +98,7 @@ class PriorityQueueLinkedList {
         previous = current
         current = current.next
       }
-      if (current === null) {
-        previous.next = node
-      }
-      else if (previous === null) {
+      if (previous === null) {
         node.next = this.head
         this.head = node
       }
@@ -112,7 +113,7 @@ class PriorityQueueLinkedList {
     if (!this.head) {
       return `Queue is Empty.`
     }
-    else{
+    else {
       const removed = this.head
       this.head = this.head.next
       return removed
@@ -122,10 +123,10 @@ class PriorityQueueLinkedList {
   display() {
     let current = this.head
 
-    if(!current){
+    if (!current) {
       console.log(`Queue is Empty.`)
     }
-    else{
+    else {
       while (current) {
         console.log(`Value:${current.value}--->Next:${current.next ? current.next.value : null}--->Priority:${current.priority}`)
         current = current.next
@@ -137,17 +138,19 @@ class PriorityQueueLinkedList {
 
 const queue = new PriorityQueueLinkedList()
 
-console.log(queue.dequeue())
+// console.log(queue.dequeue())
 
-queue.enqueue(1, 5)
-queue.enqueue(3, 15)
-queue.enqueue(2, 10)
+queue.enqueue(11, 5)
+queue.enqueue(34, 10)
+queue.enqueue(21, 15)
+queue.enqueue(30, 15)
+queue.enqueue(5, 25)
 
-queue.display()
+// queue.display()
 
-console.log(queue.dequeue().value)
-console.log(queue.dequeue().value)
-console.log(queue.dequeue().value)
-console.log(queue.dequeue())
+// console.log(queue.dequeue().value)
+// console.log(queue.dequeue().value)
+// console.log(queue.dequeue().value)
+// console.log(queue.dequeue())
 
 queue.display()
