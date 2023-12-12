@@ -1,11 +1,11 @@
 {
   "files": {
-    "Queue/priorityQueue.js": [
+    "Tree/bst.js": [
       {
-        "id": "0a24daa5-aea2-42f3-868a-1c978ba01dac",
-        "line": 91,
-        "version": 5232,
-        "index": 1466
+        "id": "492a4513-33ea-48f8-99c7-6db0c2d1a7e6",
+        "line": 126,
+        "version": 2625,
+        "index": 2329
       }
     ]
   }
